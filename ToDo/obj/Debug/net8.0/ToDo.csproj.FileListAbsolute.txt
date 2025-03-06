@@ -261,3 +261,4 @@ C:\Users\Diak\Desktop\Czovek Balazs\Project\ToDo\obj\Debug\net8.0\refint\ToDo.dl
 C:\Users\Diak\Desktop\Czovek Balazs\Project\ToDo\obj\Debug\net8.0\ToDo.pdb
 C:\Users\Diak\Desktop\Czovek Balazs\Project\ToDo\obj\Debug\net8.0\ToDo.genruntimeconfig.cache
 C:\Users\Diak\Desktop\Czovek Balazs\Project\ToDo\obj\Debug\net8.0\ref\ToDo.dll
+c:\Users\Diak\Desktop\Czovek Balazs\project\ToDo\obj\Debug\net8.0\ToDo.sourcelink.json

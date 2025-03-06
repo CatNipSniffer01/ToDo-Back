@@ -35,14 +35,17 @@ namespace ToDo.Migrations
                     b.Property<int>("AdminUserAcc_UP_D")
                         .HasColumnType("int");
 
-                    b.Property<int>("AdminUserName")
-                        .HasColumnType("int");
+                    b.Property<string>("AdminUserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("AdminUser_Email")
-                        .HasColumnType("int");
+                    b.Property<string>("AdminUser_Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("AdminUser_Password")
-                        .HasColumnType("int");
+                    b.Property<string>("AdminUser_Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("AdminUser_Id");
 
