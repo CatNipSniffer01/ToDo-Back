@@ -756,16 +756,16 @@
             "format": "int32"
           },
           "adminUserName": {
-            "type": "integer",
-            "format": "int32"
+            "type": "string",
+            "nullable": true
           },
           "adminUser_Password": {
-            "type": "integer",
-            "format": "int32"
+            "type": "string",
+            "nullable": true
           },
           "adminUser_Email": {
-            "type": "integer",
-            "format": "int32"
+            "type": "string",
+            "nullable": true
           },
           "adminUserAcc_CR_D": {
             "type": "integer",
