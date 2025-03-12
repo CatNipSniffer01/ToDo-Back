@@ -596,52 +596,6 @@
             }
           }
         }
-      },
-      "post": {
-        "tags": [
-          "users"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/users"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/users"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/users"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/users"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/users"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/users"
-                }
-              }
-            }
-          }
-        }
       }
     },
     "/api/users/{id}": {
@@ -738,6 +692,68 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/users/register": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/users"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/users"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/users"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/users/login": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/users"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/users"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/users"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -843,6 +859,14 @@
         "additionalProperties": false
       },
       "users": {
+        "required": [
+          "acc_CR_D",
+          "acc_UP_D",
+          "email",
+          "password",
+          "user_Id",
+          "userName"
+        ],
         "type": "object",
         "properties": {
           "user_Id": {
@@ -854,6 +878,10 @@
             "nullable": true
           },
           "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "hashedPassword": {
             "type": "string",
             "nullable": true
           },
