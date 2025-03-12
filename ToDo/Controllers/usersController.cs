@@ -75,14 +75,34 @@ namespace ToDo.Controllers
 
         // POST: api/users
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<users>> Postusers(users users)
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] users user)
         {
-            _context.users.Add(users);
+            if (string.IsNullOrWhiteSpace(user.UserName) || string.IsNullOrWhiteSpace(user.HashedPassword))
+                return BadRequest("Username and password are required.");
+
+            // Hash the password before storing it
+            user.HashedPassword = PasswordHasher.HashPassword(user.HashedPassword);
+
+            _context.users.Add(user);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("Getusers", new { id = users.User_Id }, users);
+            return Ok("User registered successfully!");
         }
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] users user)
+        {
+            var existingUser = _context.users.FirstOrDefault(u => u.UserName == user.UserName);
+
+            if (existingUser == null || !PasswordHasher.VerifyPassword(user.HashedPassword, existingUser.HashedPassword))
+            {
+                return Unauthorized("Invalid username or password.");
+            }
+
+            return Ok("Login successful!");
+        }
+
+
 
         // DELETE: api/users/5
         [HttpDelete("{id}")]

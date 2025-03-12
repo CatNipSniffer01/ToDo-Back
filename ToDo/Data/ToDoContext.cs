@@ -10,10 +10,7 @@ namespace ToDo.Data
     public class ToDoContext : DbContext
     {
         public ToDoContext (DbContextOptions<ToDoContext> options)
-            : base(options)
-        {
-        }
-
+            : base(options){}
         public DbSet<ToDo.modells.adminUsers> adminUsers { get; set; } = default!;
         public DbSet<ToDo.modells.users> users { get; set; } = default!;
         public DbSet<ToDo.modells.tasks> tasks { get; set; } = default!;
