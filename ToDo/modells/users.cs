@@ -7,13 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 namespace ToDo.modells {
     [PrimaryKey("User_Id")]
     public class users {
-        public required int User_Id { get; set; }
+        public int User_Id { get; set; }
         public required string UserName { get; set; }
         public required string Password { get; set; }
-        public string HashedPassword { get; set; }
+        public string? HashedPassword { get; set; }
         public required string Email { get; set; }
-        public required int Acc_CR_D { get; set; }
-        public required int Acc_UP_D { get; set; }
+        public int? Acc_CR_D { get; set; }
+        public int? Acc_UP_D { get; set; }
     }
 
     public class PasswordHasher

@@ -860,11 +860,8 @@
       },
       "users": {
         "required": [
-          "acc_CR_D",
-          "acc_UP_D",
           "email",
           "password",
-          "user_Id",
           "userName"
         ],
         "type": "object",
@@ -891,11 +888,13 @@
           },
           "acc_CR_D": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "nullable": true
           },
           "acc_UP_D": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "nullable": true
           }
         },
         "additionalProperties": false

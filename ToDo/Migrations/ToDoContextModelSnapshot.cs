@@ -125,10 +125,10 @@ namespace ToDo.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("User_Id"));
 
-                    b.Property<int>("Acc_CR_D")
+                    b.Property<int?>("Acc_CR_D")
                         .HasColumnType("int");
 
-                    b.Property<int>("Acc_UP_D")
+                    b.Property<int?>("Acc_UP_D")
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
@@ -136,7 +136,6 @@ namespace ToDo.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("HashedPassword")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")

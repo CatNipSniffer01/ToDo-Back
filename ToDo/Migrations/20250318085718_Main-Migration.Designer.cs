@@ -11,8 +11,8 @@ using ToDo.Data;
 namespace ToDo.Migrations
 {
     [DbContext(typeof(ToDoContext))]
-    [Migration("20250312091519_HashTest")]
-    partial class HashTest
+    [Migration("20250318085718_Main-Migration")]
+    partial class MainMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -128,10 +128,10 @@ namespace ToDo.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("User_Id"));
 
-                    b.Property<int>("Acc_CR_D")
+                    b.Property<int?>("Acc_CR_D")
                         .HasColumnType("int");
 
-                    b.Property<int>("Acc_UP_D")
+                    b.Property<int?>("Acc_UP_D")
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
@@ -139,7 +139,6 @@ namespace ToDo.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("HashedPassword")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
