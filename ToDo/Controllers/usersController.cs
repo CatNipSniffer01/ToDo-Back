@@ -78,11 +78,11 @@ namespace ToDo.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] users user)
         {
-            if (string.IsNullOrWhiteSpace(user.UserName) || string.IsNullOrWhiteSpace(user.HashedPassword))
+            if (string.IsNullOrWhiteSpace(user.UserName) || string.IsNullOrWhiteSpace(user.Password))
                 return BadRequest("Username and password are required.");
 
             // Hash the password before storing it
-            user.HashedPassword = PasswordHasher.HashPassword(user.HashedPassword);
+            user.Password= PasswordHasher.HashPassword(user.Password);
 
             _context.users.Add(user);
             await _context.SaveChangesAsync();
@@ -94,7 +94,7 @@ namespace ToDo.Controllers
         {
             var existingUser = _context.users.FirstOrDefault(u => u.UserName == user.UserName);
 
-            if (existingUser == null || !PasswordHasher.VerifyPassword(user.HashedPassword, existingUser.HashedPassword))
+            if (existingUser == null || !PasswordHasher.VerifyPassword(user.Password, existingUser.Password))
             {
                 return Unauthorized("Invalid username or password.");
             }
