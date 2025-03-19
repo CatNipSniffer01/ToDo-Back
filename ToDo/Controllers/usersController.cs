@@ -92,9 +92,9 @@ namespace ToDo.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] users user)
         {
-            var existingUser = _context.users.FirstOrDefault(u => u.UserName == user.UserName);
+            var existingUser = _context.users.FirstOrDefault(u => u.Email == user.Email);
 
-            if (existingUser == null || !PasswordHasher.VerifyPassword(user.Password, existingUser.Password))
+            if (existingUser.Email != user.Email || !PasswordHasher.VerifyPassword(user.Password, existingUser.Password))
             {
                 return Unauthorized("Invalid username or password.");
             }

@@ -9075,11 +9075,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Diak\\Desktop\\Czovek Balazs\\project\\ToDo-Back\\ToDo\\ToDo.csproj",
+      "projectUniqueName": "C:\\Users\\Diak\\Desktop\\Czovek Balazs\\ToDo-Back\\ToDo\\ToDo.csproj",
       "projectName": "ToDo",
-      "projectPath": "C:\\Users\\Diak\\Desktop\\Czovek Balazs\\project\\ToDo-Back\\ToDo\\ToDo.csproj",
+      "projectPath": "C:\\Users\\Diak\\Desktop\\Czovek Balazs\\ToDo-Back\\ToDo\\ToDo.csproj",
       "packagesPath": "C:\\Users\\Diak\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Diak\\Desktop\\Czovek Balazs\\project\\ToDo-Back\\ToDo\\obj\\",
+      "outputPath": "C:\\Users\\Diak\\Desktop\\Czovek Balazs\\ToDo-Back\\ToDo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
