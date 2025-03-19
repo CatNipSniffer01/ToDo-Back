@@ -5,28 +5,11 @@
 namespace ToDo.Migrations
 {
     /// <inheritdoc />
-    public partial class MainMigration : Migration
+    public partial class InitialAdmin : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "adminUsers",
-                columns: table => new
-                {
-                    AdminUser_Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    AdminUserName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    AdminUser_Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    AdminUser_Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    AdminUserAcc_CR_D = table.Column<int>(type: "int", nullable: false),
-                    AdminUserAcc_UP_D = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_adminUsers", x => x.AdminUser_Id);
-                });
-
             migrationBuilder.CreateTable(
                 name: "taskList",
                 columns: table => new
@@ -70,7 +53,6 @@ namespace ToDo.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    HashedPassword = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Acc_CR_D = table.Column<int>(type: "int", nullable: true),
                     Acc_UP_D = table.Column<int>(type: "int", nullable: true)
@@ -84,9 +66,6 @@ namespace ToDo.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "adminUsers");
-
             migrationBuilder.DropTable(
                 name: "taskList");
 

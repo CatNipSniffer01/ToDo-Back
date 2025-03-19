@@ -11,8 +11,8 @@ using ToDo.Data;
 namespace ToDo.Migrations
 {
     [DbContext(typeof(ToDoContext))]
-    [Migration("20250318091221_PasswordHashing")]
-    partial class PasswordHashing
+    [Migration("20250319094504_InitialAdmin-Test-1.3")]
+    partial class InitialAdminTest13
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,37 +23,6 @@ namespace ToDo.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("ToDo.modells.adminUsers", b =>
-                {
-                    b.Property<int>("AdminUser_Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AdminUser_Id"));
-
-                    b.Property<int>("AdminUserAcc_CR_D")
-                        .HasColumnType("int");
-
-                    b.Property<int>("AdminUserAcc_UP_D")
-                        .HasColumnType("int");
-
-                    b.Property<string>("AdminUserName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AdminUser_Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AdminUser_Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("AdminUser_Id");
-
-                    b.ToTable("adminUsers");
-                });
 
             modelBuilder.Entity("ToDo.modells.taskList", b =>
                 {
@@ -137,6 +106,9 @@ namespace ToDo.Migrations
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsAdmin")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Password")
                         .IsRequired()

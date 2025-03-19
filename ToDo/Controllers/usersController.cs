@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
+using Microsoft.IdentityModel.Tokens;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Linq;
 using ToDo.Data;
 using ToDo.modells;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using System.Configuration;
 
 namespace ToDo.Controllers
 {
@@ -15,10 +20,12 @@ namespace ToDo.Controllers
     public class usersController : ControllerBase
     {
         private readonly ToDoContext _context;
+        private readonly IConfiguration _configuration;
 
-        public usersController(ToDoContext context)
+        public usersController(ToDoContext context, IConfiguration configuration)
         {
             _context = context;
+            _configuration = configuration;
         }
 
         // GET: api/users
@@ -89,17 +96,51 @@ namespace ToDo.Controllers
 
             return Ok("User registered successfully!");
         }
+
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] users user)
         {
             var existingUser = _context.users.FirstOrDefault(u => u.Email == user.Email);
-
             if (existingUser.Email != user.Email || !PasswordHasher.VerifyPassword(user.Password, existingUser.Password))
             {
                 return Unauthorized("Invalid username or password.");
             }
 
-            return Ok("Login successful!");
+            var token = GenerateJwtToken(existingUser);
+            if (user.IsAdmin == true)
+            {
+                return Ok(new{ message = "ADMIN Login successful! " + token, user = existingUser});
+            }
+            else
+            {
+                return Ok(new {message = "Login successful! " + token, user = existingUser});
+            }
+        }
+
+        private string GenerateJwtToken(users User)
+        {
+            var jwtKey = _configuration["JWT:Key"];
+            if (string.IsNullOrWhiteSpace(jwtKey))
+            {
+                throw new Exception("JWT Key is not configured in appsettings.json");
+            }
+            var key = Encoding.UTF8.GetBytes(jwtKey);
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier, User.User_Id.ToString()),
+                new Claim(ClaimTypes.Name, User.UserName),
+                new Claim("IsAdmin", User.IsAdmin.ToString())
+            };
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(claims),
+                Expires = DateTime.UtcNow.AddHours(2), // make it non-timed
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
         }
 
 

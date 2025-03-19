@@ -593,6 +593,9 @@ C:\Users\Diak\Desktop\Czovek Balazs\project\ToDo-Back\ToDo\obj\Debug\net8.0\refi
 C:\Users\Diak\Desktop\Czovek Balazs\project\ToDo-Back\ToDo\obj\Debug\net8.0\ToDo.pdb
 C:\Users\Diak\Desktop\Czovek Balazs\project\ToDo-Back\ToDo\obj\Debug\net8.0\ToDo.genruntimeconfig.cache
 C:\Users\Diak\Desktop\Czovek Balazs\project\ToDo-Back\ToDo\obj\Debug\net8.0\ref\ToDo.dll
+C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\NuGet.Packaging.dll
+C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\System.Text.Json.dll
 C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\appsettings.json
 C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\ToDo.staticwebassets.endpoints.json
@@ -671,13 +674,11 @@ C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\NuGet.Config
 C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\NuGet.DependencyResolver.Core.dll
 C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\NuGet.Frameworks.dll
 C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\NuGet.LibraryModel.dll
-C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\NuGet.Packaging.dll
 C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\NuGet.ProjectModel.dll
 C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\NuGet.Protocol.dll
 C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\NuGet.Versioning.dll
 C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\System.ClientModel.dll
 C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\System.CodeDom.dll
 C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\System.Composition.AttributedModel.dll
@@ -699,7 +700,6 @@ C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\System.Secur
 C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
 C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\System.Security.Permissions.dll
 C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\System.Text.Encodings.Web.dll
-C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\System.Text.Json.dll
 C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\System.Windows.Extensions.dll
 C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\af\Humanizer.resources.dll
 C:\Users\Diak\Desktop\Czovek Balazs\ToDo-Back\ToDo\bin\Debug\net8.0\ar\Humanizer.resources.dll

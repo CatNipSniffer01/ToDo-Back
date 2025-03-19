@@ -11,7 +11,6 @@ namespace ToDo.Data
     {
         public ToDoContext (DbContextOptions<ToDoContext> options)
             : base(options){}
-        public DbSet<ToDo.modells.adminUsers> adminUsers { get; set; } = default!;
         public DbSet<ToDo.modells.users> users { get; set; } = default!;
         public DbSet<ToDo.modells.tasks> tasks { get; set; } = default!;
         public DbSet<ToDo.modells.taskList> taskList { get; set; } = default!;

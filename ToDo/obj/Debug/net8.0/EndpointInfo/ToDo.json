@@ -5,191 +5,6 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/adminUsers": {
-      "get": {
-        "tags": [
-          "adminUsers"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/adminUsers"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/adminUsers"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/adminUsers"
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "adminUsers"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/adminUsers"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/adminUsers"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/adminUsers"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/adminUsers"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/adminUsers"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/adminUsers"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/adminUsers/{id}": {
-      "get": {
-        "tags": [
-          "adminUsers"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/adminUsers"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/adminUsers"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/adminUsers"
-                }
-              }
-            }
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "adminUsers"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/adminUsers"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/adminUsers"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/adminUsers"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "adminUsers"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/taskLists": {
       "get": {
         "tags": [
@@ -764,36 +579,6 @@
   },
   "components": {
     "schemas": {
-      "adminUsers": {
-        "type": "object",
-        "properties": {
-          "adminUser_Id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "adminUserName": {
-            "type": "string",
-            "nullable": true
-          },
-          "adminUser_Password": {
-            "type": "string",
-            "nullable": true
-          },
-          "adminUser_Email": {
-            "type": "string",
-            "nullable": true
-          },
-          "adminUserAcc_CR_D": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "adminUserAcc_UP_D": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
       "taskList": {
         "type": "object",
         "properties": {
@@ -866,10 +651,6 @@
         ],
         "type": "object",
         "properties": {
-          "user_Id": {
-            "type": "integer",
-            "format": "int32"
-          },
           "userName": {
             "type": "string",
             "nullable": true
@@ -891,6 +672,9 @@
             "type": "integer",
             "format": "int32",
             "nullable": true
+          },
+          "isAdmin": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
